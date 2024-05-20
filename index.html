@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Shop</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,42 +15,37 @@
         }
         header {
             background-color: #000;
-            padding: 20px;
+            padding: 10px 20px;
+            margin-top: -50px;
+            margin-bottom: 40px; /* Add some space below the logo */
             display: flex;
             justify-content: center;
             align-items: center;
         }
         header img {
-            max-width: 100%;
-            height: auto;
-            width: 200px;
+            width: 700px;
+            height: 700px;
+            object-fit: cover;
         }
-        nav {
-            text-align: center;
-            margin-top: 10px;
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+            margin: 0 auto;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        section {
-            padding: 20px;
-        }
-        h2 {
-            color: #fff;
-        }
-        p {
-            color: #ccc;
+        .carousel img {
+            width: 1200px; /* Set a fixed width for each image */
+            height: 700px; /* Set a fixed height for each image */
+            object-fit: cover;
+            display: none; /* Initially hide all images */
         }
         .contact-map {
-            height: 450px;  /* Adjusted to match the height from the iframe code */
-            width: 100%;  /* Full width */
-            border: 0;  /* No border */
-        }
-        .slick-slider img {
+            height: 450px;
             width: 100%;
-            height: auto;
+            border: 0;
+        }
+        section {
+            text-align: center;
         }
     </style>
 </head>
@@ -60,29 +53,15 @@
     <header>
         <img src="logo c1.svg" alt="Smell & Smile Logo">
     </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Established over three decades ago in Dubai, Smell & Smile has evolved into a leading distributor of over 2000 perfume oils at wholesale prices. Our Toronto branch offers ready-made perfumes and essential crafting supplies, shipping worldwide. Experience luxury fragrance with Smell & Smile Canada.</p>
-        <div class="slick-slider">
-            <div><img src="images/image1.jpg" alt="Shop Image 1"></div>
-            <div><img src="images/image2.jpg" alt="Shop Image 2"></div>
-            <div><img src="images/image3.jpg" alt="Shop Image 3"></div>
-            <div><img src="images/image4.jpg" alt="Shop Image 4"></div>
-            <div><img src="images/image5.jpg" alt="Shop Image 5"></div>
-            <div><img src="images/image6.jpg" alt="Shop Image 6"></div>
-        </div>
-    </section>
-
-    <section id="products">
-        <h2>Our Products</h2>
-        <p>Display your products here with pictures and descriptions.</p>
-    </section>
+    <div class="carousel">
+        <img src="images/image1.jpg" alt="Shop Image 1">
+        <img src="images/image2.jpg" alt="Shop Image 2">
+        <img src="images/image3.jpg" alt="Shop Image 3">
+        <img src="images/image4.jpg" alt="Shop Image 4">
+        <img src="images/image5.jpg" alt="Shop Image 5">
+        <img src="images/image6.jpg" alt="Shop Image 6">
+    </div>
 
     <section id="contact">
         <h2>Contact Us</h2>
@@ -90,14 +69,22 @@
         <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $('.slick-slider').slick({
-                autoplay: true,
-                dots: true
-            });
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll(".carousel img");
+            let currentImageIndex = 0;
+
+            // Initially show the first image
+            images[currentImageIndex].style.display = "block";
+
+            setInterval(function() {
+                // Hide the current image
+                images[currentImageIndex].style.display = "none";
+                // Move to the next image
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                // Show the next image
+                images[currentImageIndex].style.display = "block";
+            }, 3000); // Change image every 3 seconds
         });
     </script>
 </body>
