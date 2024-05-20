@@ -7,10 +7,10 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #000;
@@ -23,13 +23,12 @@
         }
 
         header {
-            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
             background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 10vh; /* Add space above the logo */
-            margin-bottom: 30vh; /* Add space below the logo */
+            margin-top: 10vh;
+            margin-bottom: 30vh;
             position: relative;
         }
 
@@ -60,39 +59,62 @@
 
         .contact-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
         }
 
-        .contact-content {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
+        .contact-content, .map-content {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .contact-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
         }
 
         .contact-map {
             width: 100%;
-            height: 400px;
+            height: 100%;
             border: 0;
         }
 
-        section {
-            text-align: center;
-        }
-
-        /* Header styles */
         .top-header {
             background-color: #000;
             padding: 10px 0;
-            text-align: right; /* Align the links to the right */
+            text-align: right;
         }
 
         .top-header ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            display: inline-block; /* Display the list items inline */
+            display: inline-block;
         }
 
         .top-header ul li {
@@ -115,12 +137,25 @@
                 height: auto;
                 max-width: 100%;
             }
+
+            .contact-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .contact-content, .map-content {
+                width: 100%;
+                height: auto;
+            }
+
+            .contact-map {
+                height: 400px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Header with navigation links -->
     <div class="top-header">
         <ul>
             <li><a href="#">Home</a></li>
@@ -144,30 +179,21 @@
         </div>
     </div>
 
-    <div id="contact" class="container">
-        <div><h1>Contact Us</h1></div>
-        <br />
-        <div class="row">
-            <div class="col-lg-6">
-                <!-- Smaller map -->
-                <div id="googlemap" class="contact-map">
-                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <br />
-</div>
-<div class="col-lg-6">
-    <!-- Contact info -->
-    <div class="contact-info">
-        <h2>Smell & Smile Inc.</h2>
-        <p><strong>Address:</strong><br> 1065 Danforth Ave<br> Toronto, ON M4J 1M1<br> Canada</p>
-        <p><strong>Email:</strong> info@smellandsmile.ca</p>
-        <p><strong>Phone:</strong> 647-368-6086</p>
-        <p><strong>Mobile:</strong> 647-709-4002</p>
-        <!-- Add more contact details if needed -->
+    <div id="contact" class="contact-container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h1>Contact Us</h1>
+                <h2>Smell & Smile Inc.</h2>
+                <p><strong>Address:</strong><br> 1065 Danforth Ave<br> Toronto, ON M4J 1M1<br> Canada</p>
+                <p><strong>Email:</strong> info@smellandsmile.ca</p>
+                <p><strong>Phone:</strong> 647-368-6086</p>
+                <p><strong>Mobile:</strong> 647-709-4002</p>
+            </div>
+        </div>
+        <div class="map-content">
+            <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.6546584722126!2d-79.34068628450869!3d43.67911357912067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34bcbf6f4d11%3A0x4e1e6877760d184e!2s1065%20Danforth%20Ave%2C%20Toronto%2C%20ON%20M4J%201M1%2C%20Canada!5e0!3m2!1sen!2sus!4v1622747256096!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
-</div>
-</div>
-</div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
