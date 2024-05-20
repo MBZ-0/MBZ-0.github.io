@@ -16,48 +16,59 @@
             color: #fff;
         }
 
+        header, .carousel-container, .contact-container {
+            height: 100vh;
+            width: 100%;
+        }
+
         header {
             background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 10vh; /* Add space above the logo */
-            margin-bottom: 30vh; /* Add space below the logo */
-            position: relative;
         }
 
         header img {
-            width: 30%; /* Set logo width */
-            max-width: 90%; /* Limit logo size */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1; /* Ensure logo is on top */
+            width: 100%;
+            height: auto;
+            max-height: 100vh;
         }
 
         .carousel-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px; /* Add margin below the carousel */
-            overflow: hidden; /* Hide overflow */
+            overflow: hidden;
         }
 
         .carousel {
-            width: 80%;
-            max-width: 90%; /* Limit carousel size */
+            width: 100%;
+            height: 100%;
             position: relative;
-            z-index: 0; /* Ensure carousel is behind the logo */
         }
 
         .carousel img {
-            width: 100%; /* Ensure image fills the carousel */
-            height: auto; /* Allow images to maintain aspect ratio */
-            max-width: 1200px; /* Set maximum width */
-            max-height: 700px; /* Set maximum height */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
         }
 
         .contact-map {
-            height: 100%;
             width: 100%;
+            height: 400px;
             border: 0;
         }
 
@@ -67,7 +78,8 @@
 
         @media screen and (max-width: 768px) {
             header img {
-                width: 80%; /* Reduce logo width on smaller screens */
+                height: auto;
+                max-width: 100%;
             }
         }
     </style>
@@ -88,24 +100,21 @@
         </div>
     </div>
 
-<div class="container">
-        <div><h1>Contact Us</h1></div>
-        <br />
-        <div class="row">
-            <div class="col-lg-6">
-                <!-- Smaller map -->
-                <div id="googlemap" class="contact-map">
-				<iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="contact-container">
+        <div class="contact-content">
+            <h1>Contact Us</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="googlemap" class="contact-map">
+                        <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
-                <br />
-            </div>
-            <div class="col-lg-6">
-                <!-- Contact info -->
-                <div class="contact-form">
-                    <h2>Contact Information</h2>
-                    <p><strong>Address:</strong> Add Address</p>
-                    <p><strong>Phone Number:</strong> Add Phone Number</p>
-                    <!-- Add more contact details if needed -->
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h2>Contact Information</h2>
+                        <p><strong>Address:</strong> Add Address</p>
+                        <p><strong>Phone Number:</strong> Add Phone Number</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,9 +126,9 @@
         $(document).ready(function(){
             $('.carousel').slick({
                 autoplay: true,
-                autoplaySpeed: 3000, // Set autoplay speed to 3 seconds
+                autoplaySpeed: 3000,
                 dots: true,
-                arrows: false // Hide slider arrows
+                arrows: false
             });
         });
     </script>
