@@ -23,13 +23,12 @@
         }
 
         header {
-            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
             background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 10vh; /* Add space above the logo */
-            margin-bottom: 30vh; /* Add space below the logo */
+            margin-top: 10vh;
+            margin-bottom: 30vh;
             position: relative;
         }
 
@@ -155,6 +154,20 @@
                 max-height: 40vh; /* Adjust max-height for small screens */
             }
 
+
+            .contact-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .contact-content, .map-content {
+                width: 100%;
+                height: auto;
+            }
+
+            .contact-map {
+                height: 400px;
+            }
 
             .contact-container {
                 flex-direction: column;
