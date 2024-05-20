@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Shop</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,29 +17,40 @@
         }
         header {
             background-color: #000;
-            padding: 10px 20px;
-            margin-top: -50px;
-            margin-bottom: 40px; /* Add some space below the logo */
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh; /* Set header height to 40% of viewport height */
+        }
+        header {
+        /* Existing styles */
+        margin-bottom: 300px; /* Add margin-bottom to create space below the logo */
         }
         header img {
-            width: 700px;
-            height: 700px;
-            object-fit: cover;
+            width: 80%; /* Set logo width to 80% of header width */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 90%; /* Limit logo size to 90% of viewport width */
+            max-height: 90%; /* Limit logo size to 90% of viewport height */
+            z-index: 1; /* Ensure logo is on top */
+        }
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh; /* Set container height to 60% of viewport height */
+            margin-bottom: 300px;
         }
         .carousel {
-            display: flex;
-            overflow: hidden;
             width: 80%;
-            margin: 0 auto;
         }
         .carousel img {
-            width: 1200px; /* Set a fixed width for each image */
-            height: 700px; /* Set a fixed height for each image */
-            object-fit: cover;
+            width: auto;
+            height: 700px; /* Limit image height */
+            max-width: 100%; /* Ensure image does not exceed container width */
             display: none; /* Initially hide all images */
+        }
+        .slick-arrow {
+            display: none; /* Hide slider arrows */
         }
         .contact-map {
             height: 450px;
@@ -47,6 +60,11 @@
         section {
             text-align: center;
         }
+        @media screen and (max-width: 768px) {
+            header img {
+                width: 80%; /* Reduce logo width on smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -54,13 +72,15 @@
         <img src="logo c1.svg" alt="Smell & Smile Logo">
     </header>
 
-    <div class="carousel">
-        <img src="images/image1.jpg" alt="Shop Image 1">
-        <img src="images/image2.jpg" alt="Shop Image 2">
-        <img src="images/image3.jpg" alt="Shop Image 3">
-        <img src="images/image4.jpg" alt="Shop Image 4">
-        <img src="images/image5.jpg" alt="Shop Image 5">
-        <img src="images/image6.jpg" alt="Shop Image 6">
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="images/image1.jpg" alt="Shop Image 1">
+            <img src="images/image2.jpg" alt="Shop Image 2">
+            <img src="images/image3.jpg" alt="Shop Image 3">
+            <img src="images/image4.jpg" alt="Shop Image 4">
+            <img src="images/image5.jpg" alt="Shop Image 5">
+            <img src="images/image6.jpg" alt="Shop Image 6">
+        </div>
     </div>
 
     <section id="contact">
@@ -69,22 +89,16 @@
         <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll(".carousel img");
-            let currentImageIndex = 0;
-
-            // Initially show the first image
-            images[currentImageIndex].style.display = "block";
-
-            setInterval(function() {
-                // Hide the current image
-                images[currentImageIndex].style.display = "none";
-                // Move to the next image
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                // Show the next image
-                images[currentImageIndex].style.display = "block";
-            }, 3000); // Change image every 3 seconds
+        $(document).ready(function(){
+            $('.carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 3000, // Set autoplay speed to 3 seconds
+                dots: true,
+                arrows: false // Hide slider arrows
+            });
         });
     </script>
 </body>
