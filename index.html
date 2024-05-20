@@ -7,89 +7,166 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background-color: #1a1a1a;
             color: #fff;
         }
 
         header, .carousel-container, .contact-container {
-            height: 100vh;
             width: 100%;
+        }
+
+        .navbar {
+            background-color: #000;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff9800;
         }
 
         header {
-            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #000, #1a1a1a);
+            padding-top: 60px;
         }
 
         header img {
-            width: 100%;
+            max-width: 50%; /* Increased from 80% to 50% */
             height: auto;
-            max-height: 100vh;
         }
 
         .carousel-container {
+            height: 80vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            overflow: hidden;
+            justify-content: center;
+            padding: 40px 0;
         }
 
         .carousel {
-            width: 100%;
-            height: 100%;
-            position: relative;
+            width: 80%;
+            max-width: 1200px;
         }
 
         .carousel img {
             width: 100%;
-            height: 100%;
+            height: 80vh;
             object-fit: cover;
         }
 
         .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            padding: 60px 20px;
+            background-color: #111;
         }
 
         .contact-content {
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             text-align: center;
         }
 
-        .contact-map {
-            width: 100%;
-            height: 400px;
-            border: 0;
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        section {
-            text-align: center;
+        .contact-info div {
+            flex: 1 1 300px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info h2 {
+            margin-top: 0;
+            color: #ff9800;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-map {
+            width: 100%;
+            height: 600px; /* Increased from 400px to 600px */
+            border: 0;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         @media screen and (max-width: 768px) {
             header img {
+                max-width: 70%;
                 height: auto;
-                max-width: 100%;
+            }
+
+            .carousel img {
+                height: auto;
+            }
+
+            .contact-map {
+                height: 400px; /* Adjusted map height for smaller screens */
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
     <header>
         <img src="logo c1.svg" alt="Smell & Smile Logo">
     </header>
 
-    <div class="carousel-container">
+    <!-- Carousel Section -->
+    <div id="about" class="carousel-container">
         <div class="carousel">
             <img src="images/image1.jpg" alt="Shop Image 1">
             <img src="images/image2.jpg" alt="Shop Image 2">
@@ -100,23 +177,28 @@
         </div>
     </div>
 
-    <div class="contact-container">
+    <!-- Contact Section -->
+    <div id="contact" class="contact-container">
         <div class="contact-content">
             <h1>Contact Us</h1>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div id="googlemap" class="contact-map">
-                        <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+            <div class="contact-info">
+                <div>
+                    <h2>Address</h2>
+                    <p>1065 Danforth Ave<br> Toronto, ON M4J 1M1<br> Canada</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-form">
-                        <h2>Contact Information</h2>
-                        <p><strong>Address:</strong> Add Address</p>
-                        <p><strong>Phone Number:</strong> Add Phone Number</p>
-                    </div>
+                <div>
+                    <h2>Email</h2>
+                    <p>info@smellandsmile.ca</p>
+                </div>
+                <div>
+                    <h2>Phone</h2>
+                    <p>647-368-6086</p>
+                    <p>647-709-4002</p>
                 </div>
             </div>
+            <div id="googlemap" class="contact-map">
+                <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.433766958277!2d-79.3357943!3d43.6807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cdc4bc724533%3A0x93ad0481a640f0f1!2sSmell%20and%20Smile%20Toronto!5e0!3m2!1sen!2sca!4v1716188359508!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width: 100%; height: 100%;"></iframe>
+            </div>            
         </div>
     </div>
 
