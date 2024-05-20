@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); /* Import Dancing Script font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); /* Import Dancing Script font */
 * {box-sizing: border-box;}
 body {
   margin: 0;
@@ -153,7 +153,27 @@ img {
     border: 0;
 }
 
-
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+  
+  .text-container, .slideshow-container {
+    width: 100%;
+  }
+  
+  .contact-container {
+    padding: 20px;
+    padding-right: 0;
+  }
+  
+  .contact-content, .map-content {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+  
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
