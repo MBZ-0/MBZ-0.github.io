@@ -70,10 +70,12 @@
         <h2>About Us</h2>
         <p>Established over three decades ago in Dubai, Smell & Smile has evolved into a leading distributor of over 2000 perfume oils at wholesale prices. Our Toronto branch offers ready-made perfumes and essential crafting supplies, shipping worldwide. Experience luxury fragrance with Smell & Smile Canada.</p>
         <div class="slick-slider">
-            <div><img src="images/shop1.jpg" alt="Shop Image 1"></div>
-            <div><img src="images/shop2.jpg" alt="Shop Image 2"></div>
-            <div><img src="images/shop3.jpg" alt="Shop Image 3"></div>
-            <!-- Add more images as needed -->
+            <div><img src="images/image1.jpg" alt="Shop Image 1"></div>
+            <div><img src="images/image2.jpg" alt="Shop Image 2"></div>
+            <div><img src="images/image3.jpg" alt="Shop Image 3"></div>
+            <div><img src="images/image4.jpg" alt="Shop Image 4"></div>
+            <div><img src="images/image5.jpg" alt="Shop Image 5"></div>
+            <div><img src="images/image6.jpg" alt="Shop Image 6"></div>
         </div>
     </section>
 
