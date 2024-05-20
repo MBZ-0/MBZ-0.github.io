@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav {
+            text-align: right;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+        .contact-map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smell & Smile</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Established over three decades ago in Dubai, Smell & Smile has evolved into a leading distributor of over 2000 perfume oils at wholesale prices. Our Toronto branch offers ready-made perfumes and essential crafting supplies, shipping worldwide. Experience luxury fragrance with Smell & Smile Canada..</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <p>Display your products here with pictures and descriptions.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Put your contact information here.</p>
+        <!-- Google Maps Embed -->
+        <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3116.2962538819265!2dYOUR_LONGITUDE!3dYOUR_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AYOUR_SHOP_NAME!2sYOUR_SHOP_NAME!5e0!3m2!1sen!2sus!4v1620682291996!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+</body>
+</html>
+
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+nav {
+    text-align: right;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+.contact-map {
+    height: 400px;
+    width: 100%;
+}
